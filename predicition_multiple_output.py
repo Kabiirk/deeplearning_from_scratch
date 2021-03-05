@@ -2,16 +2,17 @@ weights = [ [0.1, 0.1, -0.3],  #hurt?
             [0.1, 0.2, 0.0],   #win?
             [0.0, 1.3, 0.1] ]  #sad?  
             #toes %win #fans
+
 def vect_mat_mul(vect,matrix):
-    assert(len(a) == len(b))
+    # assert(len(a) == len(b))
     output = 0
     for i in range(a):
         output += (a[i] * b[i])
     
     return output
 
-def neural_network(input, weights):
-    pred = vect_mat_mul(input,weights)
+def neural_network(input_vect, weights):
+    pred = vect_mat_mul(input_vect,weights)
     
     return pred
 
@@ -30,8 +31,8 @@ nfans = [1.2, 1.3, 0.5, 1.0]
 
 # input corresponds to every entry
 # for the first game of the season
-input = [toes[0],wlrec[0],nfans[0]]
-pred = neural_network(input,weights)
+inp = [toes[0],wlrec[0],nfans[0]]
+pred = neural_network(inp,weights)
 
 print(pred)
 
