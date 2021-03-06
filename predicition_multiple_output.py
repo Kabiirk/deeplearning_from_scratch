@@ -2,13 +2,23 @@ weights = [ [0.1, 0.1, -0.3],  #hurt?
             [0.1, 0.2, 0.0],   #win?
             [0.0, 1.3, 0.1] ]  #sad?  
             #toes %win #fans
+
 def dot(K, L):
+    
+    # Created for ease of calculating dot product
+    # Ref. : https://stackoverflow.com/questions/32669855/dot-product-of-two-lists-in-python/32669935
     if len(K) != len(L):
         return 0
     
     return sum(i[0] * i[1] for i in zip(K, L))
 
 def vect_mat_mul(vect,matrix):
+    
+    # Performs :
+    # dot(inp,matrix[0])
+    # dot(inp,matrix[1])
+    # dot(inp,matrix[2])
+
     assert(len(vect) == len(matrix))
     output_list = []
 
