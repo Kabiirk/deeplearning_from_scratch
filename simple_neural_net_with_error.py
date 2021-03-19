@@ -1,5 +1,5 @@
 weight = 0.1 
-lr = 0.01
+lr = 0.01 # Learning Rate / Increase in Weight
 print("Initial Weight : ", weight)
 
 # Define neural Network
@@ -13,18 +13,17 @@ number_of_toes = [8.5]
 win_or_lose_binary = [1]  # (won!!!)
 input = number_of_toes[0]
 true = win_or_lose_binary[0]
+# Initial Prediction
 pred = neural_network(input,weight)
 error = (pred - true) ** 2 # Raw Error
 print("Raw Error : ", error)
 
 #  COMPARE: Making A Prediction With a Higher Weight And Evaluating Error
-lr = 0.01
 p_up = neural_network(input,weight+lr) # Higher
 e_up = (p_up - true) ** 2 # Error
 print("Error when we take a higher Weight : ", e_up)
 
 #  COMPARE: Making A Prediction With a Lower Weight And Evaluating Error
-lr = 0.01
 p_dn = neural_network(input,weight-lr) # Lower
 e_dn = (p_dn - true) ** 2
 print("Error when we take a Lower Weight : ", e_dn)
